@@ -1,4 +1,4 @@
-import { Stack, Text } from "tamagui";
+import { ButtonText, Stack, Text } from "tamagui";
 
 export default function RootNavigator() {
   return (
@@ -27,6 +27,17 @@ export default function RootNavigator() {
       >
         Ini teks headline sm
       </Text>
+
+      <ButtonText
+        fontFamily={"$body"}
+        fontSize={"$display-md"}
+        onPress={() => {
+          console.log("clicked");
+        }}
+      >
+        {" "}
+        IniButton{" "}
+      </ButtonText>
     </Stack>
   );
 }
