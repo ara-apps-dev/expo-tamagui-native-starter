@@ -5,25 +5,32 @@
   "scripts": {
     "start-native": "expo start -c",
     "start-web": "expo start -c",
-    "android": "yarn expo run:android",
-    "ios": "yarn expo run:ios",
-    "web": "expo start --web"
+    "android": "npx expo start --android",
+    "ios": "npx expo start --ios",
+    "web": "expo start --web",
+    "reset": "rm -rf .expo .expo-shared node_modules && npm install && npx expo start --clear"
   },
   "dependencies": {
+    "@expo-google-fonts/roboto": "^0.3.0",
     "@tamagui/babel-plugin": "^1.126.4",
     "@tamagui/config": "^1.126.4",
-    "expo": "~53.0.6",
+    "expo": "~53.0.7",
+    "expo-font": "~13.3.1",
     "expo-status-bar": "~2.2.3",
     "react": "19.0.0",
     "react-native": "0.79.2",
     "react-native-reanimated": "^3.17.5",
-    "tamagui": "^1.126.4"
+    "tamagui": "^1.126.4",
+    "expo-splash-screen": "~0.30.8"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@types/react": "~19.0.10",
     "react-dom": "^19.0.0",
     "typescript": "~5.8.3"
+  },
+  "tamagui": {
+    "config": "./src/theme/tamagui.config.ts"
   },
   "private": true
 }

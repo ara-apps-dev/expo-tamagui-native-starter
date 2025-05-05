@@ -1,15 +1,12 @@
-import { defaultConfig } from "@tamagui/config/v4";
 import { createTokens } from "tamagui";
 import { fontSize, lineHeight } from "./themes";
+import { tokens } from "@tamagui/themes";
 
-export const tokens = createTokens({
-  ...defaultConfig.tokens,
-  fontSize,
-  lineHeight,
-  font: {
-    body: "Roboto",
+export const appTokens = {
+  ...tokens,
+  size: {
+    ...tokens.size,
+    ...fontSize,
+    true: 12,
   },
-  fontWeight: {
-    regular: "400",
-  },
-});
+};

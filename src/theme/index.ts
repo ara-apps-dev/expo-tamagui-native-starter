@@ -1,2 +1,1 @@
-import { config } from "./tamagui.config";
-export { config };
+export * from "./tamagui.config";

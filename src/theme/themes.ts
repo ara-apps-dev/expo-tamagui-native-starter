@@ -1,27 +1,27 @@
 // Custom Tokens
 export const fontSize = {
   // display
-  "display-lg": 57,
-  "display-md": 45,
-  "display-sm": 36,
+  "$display-lg": 57,
+  "$display-md": 45,
+  "$display-sm": 36,
   // headline
-  "headline-lg": 32,
-  "headline-md": 28,
-  "headline-sm": 24,
+  "$headline-lg": 32,
+  "$headline-md": 28,
+  "$headline-sm": 24,
   // title
-  "title-lg": 22,
-  "title-md": 16,
-  "title-sm": 14,
+  "$title-lg": 22,
+  "$title-md": 16,
+  "$title-sm": 14,
   // body
-  "body-lg": 16,
-  "body-md": 14,
-  "body-sm": 12,
+  "$body-lg": 16,
+  "$body-md": 14,
+  "$body-sm": 12,
   // label
-  "label-lg": 14,
-  "label-lg-prominent": 14,
-  "label-md": 12,
-  "label-md-prominent": 12,
-  "label-sm": 11,
+  "$label-lg": 14,
+  "$label-lg-prominent": 14,
+  "$label-md": 12,
+  "$label-md-prominent": 12,
+  "$label-sm": 11,
 };
 
 export const lineHeight = {
