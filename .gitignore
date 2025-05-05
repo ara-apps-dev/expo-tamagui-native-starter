@@ -37,14 +37,12 @@ yarn-error.*
 
 
 # Android
-android/
 *.apk
 *.aar
 *.iml
 *.keystore
 
 # iOS
-ios/
 *.xcodeproj/
 *.xcworkspace/
 *.xcuserdata/
