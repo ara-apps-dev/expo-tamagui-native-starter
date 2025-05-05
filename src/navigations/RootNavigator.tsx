@@ -1,43 +1,25 @@
-import { ButtonText, Stack, Text } from "tamagui";
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { useAtomValue } from "jotai";
+import AuthStack from "./AuthStack";
+import MainTabs from "./MainTabs";
+import { selectAtom } from "~/features";
+
+const Stack = createNativeStackNavigator();
 
 export default function RootNavigator() {
-  return (
-    <Stack p="$4" f={1} ai="center" jc="center" bg="$background">
-      <Text
-        fontFamily={"$body"}
-        fontSize="$headline-lg"
-        bg="$primary"
-        color="$backgroundHover"
-      >
-        Ini teks headline lg
-      </Text>
-      <Text
-        fontFamily={"$body"}
-        fontSize="$headline-md"
-        bg="$primary"
-        color="$backgroundHover"
-      >
-        Ini teks headline md
-      </Text>
-      <Text
-        fontFamily={"$body"}
-        fontSize="$headline-sm"
-        bg="$primary"
-        color="$backgroundHover"
-      >
-        Ini teks headline sm
-      </Text>
+  const isLoggedIn = useAtomValue(selectAtom)?.isLoggedIn;
 
-      <ButtonText
-        fontFamily={"$body"}
-        fontSize={"$display-md"}
-        onPress={() => {
-          console.log("clicked");
-        }}
-      >
-        {" "}
-        IniButton{" "}
-      </ButtonText>
-    </Stack>
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        {isLoggedIn ? (
+          <Stack.Screen name="MainApp" component={MainTabs} />
+        ) : (
+          <Stack.Screen name="Auth" component={AuthStack} />
+        )}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }

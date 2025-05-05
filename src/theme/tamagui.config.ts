@@ -25,7 +25,7 @@ const animations = createAnimations({
   },
 });
 
-const config = createTamagui({
+export const config = createTamagui({
   animations,
   defaultTheme: "light",
   shouldAddPrefersColorThemes: false,
@@ -44,5 +44,3 @@ declare module "tamagui" {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface TamaguiCustomConfig extends AppConfig {}
 }
-
-export default config;
