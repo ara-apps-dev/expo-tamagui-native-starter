@@ -5,8 +5,12 @@ import { TamaguiProvider, Theme } from "tamagui";
 import RootNavigator from "~/navigations/RootNavigator";
 import config from "~/theme/tamagui.config";
 import * as SplashScreen from "expo-splash-screen";
+import { useAtomValue } from "jotai";
+import { themeAtom } from "~/atoms";
 
 export default function App() {
+  const theme = useAtomValue(themeAtom);
+
   const [fontsLoaded] = useFonts({
     Roboto: Roboto_400Regular,
   });
@@ -21,7 +25,7 @@ export default function App() {
 
   return (
     <TamaguiProvider config={config}>
-      <Theme name={"light"}>
+      <Theme name={theme}>
         <RootNavigator />
       </Theme>
     </TamaguiProvider>

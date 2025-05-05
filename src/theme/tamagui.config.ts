@@ -1,5 +1,4 @@
 import { createAnimations } from "@tamagui/animations-react-native";
-import { createInterFont } from "@tamagui/font-inter";
 import { shorthands } from "@tamagui/shorthands";
 import { createTamagui } from "tamagui";
 import { fonts } from "./fonts";
@@ -25,10 +24,6 @@ const animations = createAnimations({
     stiffness: 250,
   },
 });
-
-const headingFont = createInterFont();
-
-const bodyFont = createInterFont();
 
 const config = createTamagui({
   animations,
