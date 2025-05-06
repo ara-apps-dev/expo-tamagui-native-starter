@@ -2,7 +2,7 @@ import { createAnimations } from "@tamagui/animations-react-native";
 import { shorthands } from "@tamagui/shorthands";
 import { createTamagui } from "tamagui";
 import { fonts } from "./fonts";
-import { fontSize, themes } from "./themes";
+import { themes } from "./themes";
 import { appTokens } from "./tokens";
 
 const animations = createAnimations({

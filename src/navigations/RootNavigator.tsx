@@ -2,7 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useAtomValue } from "jotai";
-import AuthStack from "./AuthStack";
+import AuthStack from "./auth/AuthStack";
 import MainTabs from "./MainTabs";
 import { selectAtom } from "~/features";
 

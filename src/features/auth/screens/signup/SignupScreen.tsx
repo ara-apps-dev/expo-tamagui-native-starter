@@ -7,20 +7,22 @@ import {
 } from "~/components";
 import { SvgXml } from "react-native-svg";
 import { getIcon } from "~/assets";
-import useLogin from "../../hooks/useLogin";
 import { SOCIALS_AUTH } from "~/constants";
+import useSignup from "../../hooks/useSignup";
 
-export default function LoginScreen() {
+export default function SignupScreen() {
   const theme = useTheme();
   const {
     email,
     setEmail,
     password,
     setPassword,
+    confirmPassword,
+    setConfirmPassword,
     loading,
-    handleLogin,
-    toSignup,
-  } = useLogin();
+    handleSignup,
+    toLogin,
+  } = useSignup();
 
   return (
     <ScreenWrapper
@@ -31,10 +33,11 @@ export default function LoginScreen() {
       <Stack m={20} gap={20} bg={"$background"}>
         <Stack gap={6}>
           <Text fontFamily={"$body"} fontSize="$body-xl" fontWeight={"700"}>
-            Login
+            Sign up
           </Text>
           <Text fontFamily={"$body"} fontSize="$label-xxs" fontWeight={"400"}>
-            Welcome back!
+            You're just one step away from turning your photos into something
+            beautiful.
           </Text>
         </Stack>
 
@@ -57,7 +60,17 @@ export default function LoginScreen() {
           disabled={loading}
         />
 
-        <AppButton variant="primary" onPress={handleLogin}>
+        <AppTextField
+          label="Confirm Password"
+          placeholder="Enter password"
+          value={confirmPassword}
+          onChangeText={setConfirmPassword}
+          secureTextEntry
+          showToggleVisibility
+          disabled={loading}
+        />
+
+        <AppButton variant="primary" onPress={handleSignup}>
           {loading ? (
             <Stack gap={8} flexDirection="row">
               <Spinner color={"$primary"} size="small" />
@@ -67,11 +80,11 @@ export default function LoginScreen() {
                 fontWeight={"700"}
                 color={"$background"}
               >
-                Logging In...
+                Creating New Account...
               </Text>
             </Stack>
           ) : (
-            "Log In"
+            "Create New Account"
           )}
         </AppButton>
       </Stack>
@@ -112,16 +125,16 @@ export default function LoginScreen() {
             fontWeight={"400"}
             col={"$color"}
           >
-            Don't have an account?
+            Already have an account?
           </Text>
           <PressableText
             onPress={() => {
               if (!loading) {
-                toSignup();
+                toLogin();
               }
             }}
           >
-            Sign Up
+            Log In
           </PressableText>
         </Stack>
       </Stack>

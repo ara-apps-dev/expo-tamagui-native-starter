@@ -1,6 +1,5 @@
-import { createTokens } from "tamagui";
-import { fontSize, lineHeight } from "./themes";
 import { tokens } from "@tamagui/themes";
+import { fontSize } from "./fonts";
 
 export const appTokens = {
   ...tokens,

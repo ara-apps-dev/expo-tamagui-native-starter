@@ -1,13 +1,17 @@
-import { Text } from "tamagui";
+import { Text, useTheme } from "tamagui";
 import { ScreenWrapper } from "~/components/ScreenWrapper";
 
 export default function ProfileScreen() {
+  const theme = useTheme();
   return (
-    <ScreenWrapper>
+    <ScreenWrapper
+      statusBarBg={`${theme.primary.val}`}
+      backgroundColor={`${theme.background.val}`}
+    >
       <Text fontSize="$headline-md" mb="$4">
-        Your Profile
+        Profile
       </Text>
-      <Text>Profile info, edit button, etc. can go here.</Text>
+      <Text>Will contain Profile info, edit button, etc. can go here.</Text>
     </ScreenWrapper>
   );
 }

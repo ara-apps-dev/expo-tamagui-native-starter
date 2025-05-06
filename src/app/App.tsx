@@ -1,4 +1,8 @@
-import { Roboto_400Regular } from "@expo-google-fonts/roboto";
+import {
+  Roboto_400Regular,
+  Roboto_500Medium,
+  Roboto_700Bold,
+} from "@expo-google-fonts/roboto";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
 import { Provider as JotaiProvider } from "jotai";
@@ -12,7 +16,9 @@ export default function App() {
   const { effectiveTheme } = useThemeController();
 
   const [fontsLoaded] = useFonts({
-    Roboto: Roboto_400Regular,
+    Roboto_400Regular,
+    Roboto_500Medium,
+    Roboto_700Bold,
   });
 
   useEffect(() => {
